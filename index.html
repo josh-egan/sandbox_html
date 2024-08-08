@@ -1,0 +1,58 @@
+<!-- After HTML5, the DOCTYPE tag is greatly simplified. Only need the `html` attribute. -->
+<!DOCTYPE html>
+
+<!-- html tag is the root html tag for an html document -->
+<html>
+  <!-- head tag is the container for metadata about the page. Should be above the <body> tag. -->
+  <head>
+    <!-- title tag is required in every HTML document. The title tag determines the text displayed in a browser tab. -->
+    <title>HTML Cheatsheet</title>
+
+    <!-- The <base> tag specifies the base URL and/or target for all relative URLs in a document. -->
+    <!-- <base href="https://example.com/" target="_self" /> -->
+
+    <!-- Use the link tag to define relationships with external resources. Especially used to pull in favicon and stylesheets. 
+         See https://www.w3schools.com/tags/tag_link.asp -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="stylesheet" type="text/css" href="path-to-stylesheet.css" />
+
+    <!-- meta tag is very important for defining data about the page. meta tags are very important for SEO -->
+    <!-- usage of meta tags for effective SEO deserves its own page -->
+    <meta charset="UTF-8" />
+    <meta name="description" content="HTML Cheatsheet" />
+    <meta name="keywords" content="HTML" />
+    <meta name="author" content="Josh Egan" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- style tag is used to define css styles. Defining styles this way is archaic, however. There are many advanced style systems. -->
+    <style></style>
+
+    <!-- script tag can be used to provide links to external script files. -->
+    <!-- when using a modern web development framework, the necessary script tags are usually generated -->
+    <!-- Attribute notes: 
+           - "async" - Specifies that the script is downloaded in parallel to parsing the page, and executed as soon as it is available (before parsing completes) (only for external scripts)
+           - "defer" - Specifies that the script is downloaded in parallel to parsing the page, and executed after the page has finished parsing (only for external scripts)
+    -->
+    <script type="text/javascript" src="/blocking-script.js"></script>
+    <script
+      type="text/javascript"
+      src="/async-non-blocking-script.js"
+      async
+    ></script>
+  </head>
+
+  <body>
+    The content of the document......
+  </body>
+  <div id="script-demo"></div>
+
+  <!-- script tag can be used to define JavaScript inline, which should rarely happen. -->
+  <!-- If absolutely necessary, ensure that the script is loaded after the html elements which the script depends on -->
+  <script>
+    document.getElementById("script-demo").innerHTML = "Hello JavaScript!";
+  </script>
+
+  <!-- the noscript tag executes only if the user's browser has disabled Javascript -->
+  <noscript>Your browser does not support JavaScript!</noscript>
+</html>
